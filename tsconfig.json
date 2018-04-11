@@ -1,0 +1,49 @@
+{
+	"version": "2.7.2",
+	"compilerOptions": {
+		"module": "esnext",
+		"target": "es2016",
+		"lib": ["es6", "es7", "dom"],
+		"types": [ "inferno" ],
+		"noImplicitAny": true,
+		"allowJs": false,
+		"allowSyntheticDefaultImports": true,
+		"moduleResolution": "node",
+		"preserveConstEnums": true,
+		"outDir": "./dist/",
+		"listFiles": true,
+		"sourceMap": true,
+		"jsx": "preserve",
+		"noImplicitReturns": false,
+		"noFallthroughCasesInSwitch": true,
+		"experimentalDecorators": true,
+		"noUnusedLocals": true,
+		"strictNullChecks": true,
+		"removeComments": false,
+		"rootDir": "."
+	},
+	"exclude": [ "node_modules" ],
+	"include": [
+		"./typing.d.ts",
+		"./src"
+	],
+	"compileOnSave": false,
+	"formatCodeOptions": {
+		"indentSize": 2,
+		"tabSize": 2,
+		"newLineCharacter": "\n",
+		"convertTabsToSpaces": true,
+		"insertSpaceAfterCommaDelimiter": true,
+		"insertSpaceAfterSemicolonInForStatements": true,
+		"insertSpaceBeforeAndAfterBinaryOperators": true,
+		"insertSpaceAfterKeywordsInControlFlowStatements": true,
+		"insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
+		"insertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis": false,
+		"placeOpenBraceOnNewLineForFunctions": false,
+		"placeOpenBraceOnNewLineForControlBlocks": false
+	},
+
+	"atom": {
+		"rewriteTsconfig": true
+	}
+}

@@ -1,0 +1,3 @@
+{
+  "filePattern": "{src/**/*.ts, dist/**/*.js}"
+}

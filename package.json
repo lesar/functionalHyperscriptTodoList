@@ -1,0 +1,54 @@
+{
+  "name": "functional-hyperscript-todolist",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Typescript inferno prove",
+  "main": "index.js",
+  "scripts": {
+    "clear": "rm -r ./node_modules/*",
+    "build": "NODE_ENV=production webpack --mode production --config webpack.prod.js",
+    "start": "NODE_ENV=development webpack-dev-server --inline --mode development --config webpack.dev.js",
+    "dev": "NODE_ENV=development webpack --mode development --config webpack.dev.js",
+    "test": "mocha --ui bdd -r ts-node/register -r ignore-styles -r jsdom-global/register test/**/*.spec.ts || exit 0"
+  },
+  "author": "Leonardo Saracini",
+  "license": "MIT",
+  "engines": {
+    "node": "9.11.1"
+  },
+  "dependencies": {
+    "classnames": "^2.2.5",
+    "hyperscript": "^2.0.2",
+    "hyperscript-helpers": "^3.0.3",
+    "inferno": "^5.0.3",
+    "inferno-hyperscript": "^5.0.3",
+    "inferno-redux": "^5.0.3",
+    "list": "^2.0.10",
+    "rambda": "^1.1.0",
+    "redux": "^3.7.2",
+    "reselect": "^3.0.1",
+    "type-to-reducer": "^1.1.0"
+  },
+  "devDependencies": {
+    "@types/classnames": "^2.2.3",
+    "awesome-typescript-loader": "^5.0.0",
+    "clean-webpack-plugin": "^0.1.17",
+    "css-loader": "^0.28.11",
+    "ejs-loader": "^0.3.1",
+    "file-loader": "^1.1.11",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.4.0",
+    "optimize-css-assets-webpack-plugin": "^4.0.0",
+    "source-map-loader": "^0.2.3",
+    "style-loader": "^0.20.3",
+    "typescript": "^2.7.2",
+    "uglifyjs-webpack-plugin": "^1.1.6",
+    "webpack": "4",
+    "webpack-bundle-analyzer": "^2.11.1",
+    "webpack-cli": "^2.0.14",
+    "webpack-dev-middleware": "^3.1.2",
+    "webpack-dev-server": "^3.1.3",
+    "webpack-merge": "4.1.2",
+    "xml-loader": "^1.2.1"
+  }
+}

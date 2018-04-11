@@ -1,0 +1,12 @@
+div.todo.completed {
+  text-decoration: line-through;
+}
+div.todo.enabled {
+  color:black;
+}
+div.todo.disabled {
+  color:lightgrey;
+}
+div.todo {
+  cursor: pointer;
+}

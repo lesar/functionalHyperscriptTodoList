@@ -1,0 +1,8 @@
+{
+  "resolution": "main",
+  "tree": {
+    "src": "https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/bcd8f0fee4d21472a0d640a348e1a22592dcc26e/ramda/index.d.ts",
+    "raw": "registry:dt/ramda#0.0.0+20170322181526",
+    "typings": "https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/bcd8f0fee4d21472a0d640a348e1a22592dcc26e/ramda/index.d.ts"
+  }
+}
