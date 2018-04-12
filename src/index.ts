@@ -1,7 +1,6 @@
 /**
-* This is the root file for the exemple HyperscriptTodoList.
-* In this file I use a little of RamdaJs only to introduce this library:
-* I will like to write a new HyperscriptTodoList example in functional way next time
+* This is the root file for the exemple FunctionalHyperscriptTodoList.
+* In this file I use a little of RambdaJs only to introduce this library
 */
 import { render as infernoRender, InfernoInput, VNode } from 'inferno';
 import { createStore, Store } from 'redux';
@@ -9,41 +8,34 @@ import { Provider } from 'inferno-redux';
 import reducer from './redux/reducer'
 import { h } from './infernoHyperscript';
 /**
-* I do not import all RamdaJs (import * as R from "ramda";) only partialRight
+* I do import all RambdaJs Rambda is tree shaling so webpack import
+* only used code
 */
 import * as R  from "rambda";
 import { App, IState } from './app'
 
-declare var process: {
+export declare var process: {
   env: {
     'NODE_ENV': string
   }
 }
 
-console.log('process.env.NODE_ENV', process.env.NODE_ENV);
+//console.log('process.env.NODE_ENV', process.env.NODE_ENV);
 /**
-* take Inferno.render and give to it document.getElementById('root') as last parameter
-* returning a function that need only the component param
+* take Inferno.render and swap his parameter and curry it,
+* so I can obtain function render giving to renderer the 
+* dom root element
 */
 const renderer = R.curry((
   node: HTMLElement|null, 
   component: InfernoInput
 ) => infernoRender(component, node));
-/*
-const renderer = (
-  node: HTMLElement|null
-) => (
-  component: InfernoInput
-) => infernoRender(component, node);
-*/
-const render = renderer(document.getElementById('root'));
-/*
-  render,
-  [ document.getElementById('root') ]
-);
-*/
 /**
-* In Redux only one store adn one state are used.
+ * this function take only InfernoComponent to do an inferno render
+ */
+const render = renderer(document.getElementById('root'));
+/**
+* In Redux only one store and one state are used.
 * The store encapsulate state. Store is create taking a reducer function
 * **todoAppReducer** that take (state, action) to calculate a
 * new application state.
@@ -56,8 +48,9 @@ const render = renderer(document.getElementById('root'));
 const store = createStore<IState>( reducer );
 
 /**
- * h as optional params not good for compose function
- * so define a fix params h function
+ * h in hyperscript has too many optional params, not good for compose function
+ * so define a fix params h function.
+ * mainh function return a VNode InfernoInput and give it to renderer function by R.compose
  */
 const mainh = (
   tag: Function, 
