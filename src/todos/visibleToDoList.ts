@@ -1,5 +1,4 @@
 import { connect } from 'inferno-redux';
-//import { editSetValue, saveEditTodo, editTodo, toggleTodo, deleteTodo, toggleEnableTodo } from './todo/actions';
 import { editSetValue } from './todo/redux/actions/editSetValue';
 import { todoSaveEdit } from './todo/redux/actions/todoSaveEdit';
 import { todoEditToggle } from './todo/redux/actions/todoEditToggle'; 
@@ -17,6 +16,8 @@ import makeGetVisibleTodos from './selectors'
 * inject the filtered todos in component props.
 * Current state is provided as parameter by the store.
 * Use of component this.context.store.getState() is not necessary.
+* makeGetVisibleTodos is a Reselect function that grant memoization
+* caching last props 
 */
 const makeMapStateToProps = () => {
   const getVisibleTodos = makeGetVisibleTodos();
@@ -62,6 +63,7 @@ const mapDispatchToProps = (dispatch: any) => ({
 * bindActionCreators if first argument is an object like { name: fun1, ...} return
 * an object like { name: (argsFun1) => ( dispatch( fun1(argsFun1) ) ), ... }.
 * [See](https://redux.js.org/docs/api/bindActionCreators.html)
+* I put all in one 'send' props so propagate interfaces is more simple
 */
 const mapDispatchToProps = (dispatch: any) => ({
   send: bindActionCreators({
@@ -74,7 +76,7 @@ const mapDispatchToProps = (dispatch: any) => ({
   }, dispatch)
 });
 
-const VisibleTodoList = connect(
+export const VisibleTodoList = connect(
   makeMapStateToProps,
   mapDispatchToProps
 )(TodoList);
