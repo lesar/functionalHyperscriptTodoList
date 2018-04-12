@@ -114,6 +114,7 @@ export const TodoPrebind = ( { id, title, completed, enabled, editMode, send }: 
           }
         }
         /*,
+        //if imput1 is controlled this code is necessary
         onInput: (event: any) => {
           event.preventDefault();
           let value: string = event.target.value;
