@@ -1,3 +1,6 @@
+/**
+ * unique source for constants so their name is unique
+ */
 export const ADD_TODO = 'ADD_TODO';
 export const TOGGLE_COMPLETE_TODO = 'TOGGLE_COMPLETE_TODO';
 export const TOGGLE_ENABLE_TODO = 'TOGGLE_ENABLE_TODO';
