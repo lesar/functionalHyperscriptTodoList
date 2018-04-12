@@ -1,3 +1,6 @@
+/**
+ * these interfaces are used in action creation
+ */
 import { IFilter } from '../app';
 
 export interface IRefAction  {
