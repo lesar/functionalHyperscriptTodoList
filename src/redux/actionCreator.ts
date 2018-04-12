@@ -24,18 +24,10 @@ export interface IMetaCreator<A, M> {
   (args: A): M;
 };
 /**
- * usage:
- * let addTodo: (id: number, text: string) => IAction = createAction(TODO_ADD, 
- * (id: number, text: string) => IAction ({
- *  id,
- *  text
- * }));
- * addTodo(1, 'buy milk');
- * 
- * @param type string
- * @param payloadCreator any 
- * @param metaCreator any
- * @returns IActionCreator
+ * return a action SFA creator completed by payload and meta
+ * @param type string constant identify the action
+ * @param payloadCreator 
+ * @param metaCreator 
  */
 export function createActionPM<A, AM, P, M>(
   type: string, 
@@ -54,6 +46,11 @@ export function createActionPM<A, AM, P, M>(
   };
   return actionCreator;
 }
+/**
+ * return a action SFA creator completed by payload
+ * @param type string constant identify the action
+ * @param payloadCreator 
+ */
 export function createActionP<A, P>(
   type: string, 
   payloadCreator: IPayloadCreator<A, P>
@@ -69,6 +66,10 @@ export function createActionP<A, P>(
   };
   return actionCreator;
 }
+/**
+ * return a action SFA creator
+ * @param type string constant identify the action
+ */
 export function createAction(type: string): IActionCreator {
   const actionCreator = (): IAction => {
     let result: IAction = { 
