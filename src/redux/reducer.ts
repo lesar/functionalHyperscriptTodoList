@@ -10,7 +10,10 @@ import typeToReducer from 'type-to-reducer';
 import { combineReducers } from 'redux';
 import { filterAll, IState } from '../app';
 import { list } from 'list';
-
+/**
+ * after import all reducersObj I create a new object iniect all reducersObj props.
+ * this help if I need to subclass action and use promise
+ */
 const reducerObj = Object.assign({},
   //editSetValueReducerObj,
   addTodoReducerObj,
