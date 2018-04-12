@@ -60,7 +60,9 @@ export class Filter implements IFilter {
 * Initial filter object: all are showed
 */
 export var filterAll = new Filter();
-
+/**
+ * first Functional component quite simple
+ */
 export const App = () => html.div([
   h(AddTodo),
   h(VisibleTodoList),
