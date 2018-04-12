@@ -32,10 +32,6 @@ const mapDispatchToProps = (dispatch: any) => ({
 export interface IAddTodoParams {
   onAddTodoClick(e: Event, input1: HTMLInputElement): void;
 };
-/**
-* use to handle dom object to set focus
-*/
-let input1: HTMLInputElement;
 
 /*
 function updated(lastProps:any, nextProps:any) {
@@ -51,8 +47,12 @@ function mounted(element: any) {
   console.log(element.tagName);
 }
 */
-const AddTodoPreBind = (props: IAddTodoParams) => 
-  html.div('.w3-container',[
+const AddTodoPreBind = (props: IAddTodoParams) => { 
+  /**
+  * use to handle dom object to set focus
+  */
+  let input1: HTMLInputElement;
+  return html.div('.w3-container',[
     html.form(
       { className: 'w3-container',
         onSubmit: (e: Event) => {
@@ -65,7 +65,7 @@ const AddTodoPreBind = (props: IAddTodoParams) =>
           type: 'text',
           /**
           * **ref** is a special functionality that allows to bind dom node
-          * at creation time to a our field. I will use to set focus.
+          * at creation time to a our field. I will use to submit new todo.
           */
           ref: (node: HTMLInputElement) => { input1 = node; }
         }),
@@ -73,7 +73,7 @@ const AddTodoPreBind = (props: IAddTodoParams) =>
       ]
     )
   ]);
-
+};
 /**
 * I'm connecting AddTodoPreBind to have **this.props.onAddTodoClick** in the
 * AddTodo component's props
