@@ -23,7 +23,7 @@
     "inferno": "^5.0.4",
     "inferno-hyperscript": "^5.0.4",
     "inferno-redux": "^5.0.4",
-    "list": "^2.0.10",
+    "list": "^2.0.11",
     "rambda": "^1.1.0",
     "redux": "^3.7.2",
     "reselect": "^3.0.1",
