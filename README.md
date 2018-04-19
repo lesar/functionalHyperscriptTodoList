@@ -11,16 +11,16 @@ I have updated some library and add some change.
 Read first this [readme][19]
 
 The *TodoList* application is the same: this help to learn the difference from *standard Component* and *Functional Component* style.  
-The example is too simple to appreciate the reason Functional Programming is a good choise but is a starting point.  
+The example is too simple to appreciate the reason Functional Programming is a good choice but is a starting point.  
 
-##structure
+## structure
 I have changed the structure: where and how create actions and reducers and how to bring and bind all together.  
 I have read some good idea in [A new approach to managing Redux actions][31]
 
 So I have put all redux stuf in redux folder in all project folder.  
 The actions are no more created all together but I use one file for one action and put his reducer in the same file.  
 Actions is [FSA][30] although I use type over his payload.  
-I use On big costant file in /redux folder and on it all string constan that are key for actions (the Action.type field). So cannot be same costant define two time. All action file import from this file their action type costant.  
+I use On big constant file in /redux folder and on it all string constant that are key for actions (the Action.type field). So cannot be same constant define two time. All action file import from this file their action type constant.  
 In the /redux/reducer.ts I import all actions to build the final reducer. All action file have a Reducer object and I put all together in this manner:  
 
 ```javascript
@@ -63,11 +63,11 @@ Is a good tool to avoid to rewriting a lot of functional code and have a small s
 Rambda is tree-shaking: it only imports what is used. See this [example][28]  
 There is big sister also: look at [rambdax][29] 
 
-###List  
+### List  
 Is a wonderful library it achieves immutability on big data list. 
 Instead, to use a big framework to immutability, *list* is a good shortcut. His size is small and is super fast. To work on other type than list and achieve immutability we can use standard vanilla javascript technique like [Object.assign()][25], [de-structuring assignment][26], [Rest parameters][27], ...
 
-##final considerations  
+## Final considerations  
 Both Rambda than List are not necessary to this example. This is due to the simple nature of this example.  
 Writing real application and using big data make both tools more useful.
 
